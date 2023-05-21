@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      text-align: center;
+    }
+    
+    .header {
+      font-weight: bold;
+    }
+    
+    #word-input {
+     width: 300px;
+    }
+
+   #text-area {
+     width: 400px;
+     height: 200px;
+    }
+    .add-button {
+      background-color: yellow;
+      color: black;
+    }
+    
+    .reset-button {
+      background-color: red;
+      color: white;
+    }
+    
+    .censor-button {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="header">List of prohibited words:</h1>
+    <div id="bad-words">
+      <h2 class="header">Bad words:</h2>
+    </div>
+    <input type="text" id="word-input" placeholder="word here...">
+    <button id="add-button" class="add-button">Add</button>
+    <button id="reset-button" class="reset-button">Reset</button>
+    <br><br>
+    <textarea id="text-area" rows="4" cols="50" placeholder="text here..."></textarea>
+    <br><br>
+    <button id="censor-button" class="censor-button">Censor</button>
+  </div>
+    <script src="./script.js"></script>
+</body>
+</html>

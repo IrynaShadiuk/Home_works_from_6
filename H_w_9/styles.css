@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+  }
+  
+  .left-container, .right-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  form label, form input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+
+#login,
+#password,
+#email {
+  width: 300px; 
+  height: 40px; 
+  border: 1px solid green; 
+  padding: 5px; 
+}
+
+#addUserBtn,
+#editUserBtn {
+  width: 150px; 
+  height: 40px; 
+  border: 1px solid green;
+  padding: 5px; 
+}
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  .edit-btn {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+  }

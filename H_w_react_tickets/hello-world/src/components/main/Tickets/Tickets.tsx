@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TicketsList from './tickets_list/TicketsList'
 import TicketsForm from './tickets_form/TicketsForm'
-import 'tickets.scss'
+
 import { ITicket } from "../../interfaced/tickets.dao";
 import { TicketType } from "../../interfaced/tickets.dao";
 
@@ -22,7 +22,7 @@ const Tickets = () => {
 
     return (
         <div className="tickets">
-            <TicketsList tickets={Tickets} />
+            <TicketsList tickets={tickets} />
             <button onClick={() => setModalOpen(true)}>Add New Ticket</button>
             {isModalOpen &&
                 <TicketsForm

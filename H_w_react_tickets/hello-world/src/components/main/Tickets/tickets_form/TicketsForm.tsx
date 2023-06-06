@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TicketType } from "../../../interfaced/tickets.dao";
-import './userForm.scss'
+import './ticketsForm.scss'
 import { ITicket } from "../../../interfaced/tickets.dao";
 
 interface IProps {
@@ -60,7 +60,7 @@ interface IProps {
             <form action="" className="tickets-form">
             <div className="tickets-form__header">
             <h1>Create New Ticket</h1>
-            <span onClick={closeModalWindow}>X</span>
+            <span onClick={() => closeModalWindow()}>X</span>
             </div>
             <div className="tickets-form__content">
             <input type="text" placeholder="Title" onChange={handleTitle} />
@@ -78,8 +78,12 @@ interface IProps {
             </label>
             </div>
             <div className="user-form__footer">
-            <button onClick={createTicket}>Create</button>
-            <button onClick={closeModalWindow}>Cancel</button>
+               
+            <button className='create-btn' onClick={createTicket}>Create</button>
+            
+           
+            <button className="cancel-btn" onClick={() => closeModalWindow()}>Cancel</button>
+            
             </div>
             </form>
             );

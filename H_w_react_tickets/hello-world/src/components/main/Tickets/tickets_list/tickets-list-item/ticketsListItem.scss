@@ -1,0 +1,24 @@
+$table-background-color: lightcyan;
+$table-border-color: darkgray;
+$table-cell-padding: 8px;
+$table-header-background-color: gray;
+$table-header-color: white;
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: $table-background-color;
+  border: 1px solid $table-border-color;
+
+  th, td {
+    min-width: 15%;;
+    text-align: left;
+    padding: $table-cell-padding;
+    border: 1px solid $table-border-color;
+  }
+
+  th {
+    background-color: $table-header-background-color;
+    color: $table-header-color;
+  }
+}

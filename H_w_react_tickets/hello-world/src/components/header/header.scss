@@ -16,8 +16,13 @@
                 color: black;
                 text-decoration: none;
                 text-transform: uppercase;
+                font-weight: bold;
+                font-size: 14px;
             }
         }
     }
 }
-
+.header__title {
+    font-size: 24px;
+    font-weight: bold;
+  }

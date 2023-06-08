@@ -79,10 +79,10 @@ interface IProps {
             </div>
             <div className="user-form__footer">
                
-            <button className='create-btn' onClick={createTicket}>Create</button>
+            <button type='button' className='create-btn' onClick={createTicket}>Create</button>
             
            
-            <button className="cancel-btn" onClick={() => closeModalWindow()}>Cancel</button>
+            <button type='button' className="cancel-btn" onClick={() => closeModalWindow()}>Cancel</button>
             
             </div>
             </form>

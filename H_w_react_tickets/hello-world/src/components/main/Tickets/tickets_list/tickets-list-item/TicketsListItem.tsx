@@ -1,4 +1,5 @@
-import { TicketType } from "../../../../interfaced/tickets.dao";
+import { ITicket, TicketType } from "../../../../interfaced/tickets.dao";
+import './ticketsListItem.scss'
 interface IProps {
   title: string;
   id: number;
@@ -8,22 +9,19 @@ interface IProps {
   sold: boolean;
 }
 
-const TicketsListItem = (props: IProps) => {
+    const TicketsListItem = (props: IProps) => {
     const { title, id, date, type, price, sold } = props;
 
     return (
-        <li>
-            {title} (ID: {id})
-            <br />
-            Date: {date.toString()}
-            <br />
-            Type: {type}
-            <br />
-            Price: ${price}
-            <br />
-            {sold ? "Sold" : "Not Sold"}
-        </li>
-    );
-}
+        <tr>
+          <td className="title">{title}</td>
+          <td className="id">(ID: {id})</td>
+          <td className="date">{date.toString()}</td>
+          <td className="type">{type}</td>
+          <td className="price">${price}</td>
+          <td className="status">{sold ? "Sold" : "Not Sold"}</td>
+        </tr>
+      );
+    };
 
 export default TicketsListItem;

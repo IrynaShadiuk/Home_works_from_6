@@ -1,10 +1,11 @@
 import './main.scss'
-import Tickets from './Tickets/Tickets'
+
 
 const Main = () => {
     return (
         <div>
-            <Tickets />
+          <h1>Wellcome Page</h1>
+            
         </div>
     )
 }

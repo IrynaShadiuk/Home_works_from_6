@@ -18,6 +18,11 @@
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size: 14px;
+
+                &.active {
+                    text-decoration: underline;
+                    color: skyblue;
+                }
             }
         }
     }

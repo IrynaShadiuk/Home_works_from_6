@@ -9,22 +9,24 @@ const UsersList = (props: IProps) => {
     const users = props.users;
 
     return (
-        <ul>
-            {!!users.length ? users.map(user => {
-                return <UsersListItem
-                    id={user.id}
-                    firstName={user.firstName}
-                    lastName={user.lastName}
-                    age={user.age}
-                    email={user.email}
-                    key={user.id}
-                />
-            })
-            :
+        <ul style={{ fontSize: 18, fontStyle: 'italic' }}>
+          {!!users.length ? (
+            users.map((user) => (
+              <UsersListItem
+                id={user.id}
+                firstName={user.firstName}
+                lastName={user.lastName}
+                age={user.age}
+                email={user.email}
+                key={user.id}
+              />
+            ))
+          ) : (
             <h1>No Users data</h1>
-        }
+          )}
         </ul>
-    );
+      );
+    
 }
 
 export default UsersList;

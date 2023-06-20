@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { IUser } from "../../interfaced/users.dao"
 import './userForm.scss'
+import InputField from "../../_shared/InputField";
+import ActionButton from "../../_shared/ActionButton";
 
 interface IProps {
     updateUsersList: (user: IUser) => void;
@@ -49,13 +51,13 @@ const UsersListItem = (props: IProps) => {
                 <span onClick={closeModalWindow}>X</span>
             </div>
             <div className="user-form__content">
-                <input type="text" placeholder="First Name" onChange={handleFirstName} />
-                <input type="text" placeholder="Last Name" onChange={handleLastName} />
-                <input type="text" placeholder="E-Mail" onChange={handleEmail} />
-            </div>
+                <InputField placeholder ="First Name" onChange={handleFirstName} />
+                <InputField placeholder ="Last Name" onChange={handleLastName} />
+                <InputField type ="email" placeholder="E-Mail" onChange={handleEmail} />
+            </div>;
             <div className="user-form__footer">
-                <button onClick={createUser}>Create</button>
-                <button onClick={closeModalWindow}>Cancel</button>
+                <ActionButton className="create-btn" onClick={createUser} buttonText='Create' />
+                <ActionButton className="cancel-btn" onClick={closeModalWindow} buttonText='Cancel' />
             </div>
         </form>
     );

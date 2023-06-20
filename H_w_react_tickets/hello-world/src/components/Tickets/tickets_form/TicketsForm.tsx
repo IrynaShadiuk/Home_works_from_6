@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { TicketType } from "../../interfaced/tickets.dao";
 import './ticketsForm.scss'
 import { ITicket } from "../../interfaced/tickets.dao";
+import InputField from "../../_shared/InputField";
+import ActionButton from "../../_shared/ActionButton";
 
 interface IProps {
     updateTicketsList: (ticket: ITicket) => void;
@@ -63,26 +65,23 @@ interface IProps {
             <span onClick={() => closeModalWindow()}>X</span>
             </div>
             <div className="tickets-form__content">
-            <input type="text" placeholder="Title" onChange={handleTitle} />
-            <input type="number" placeholder="ID" onChange={handleId} />
-            <input type="date" onChange={handleDate} />
+            <InputField type="text" placeholder="Title" onChange={handleTitle} />
+            <InputField type="number" placeholder="ID" onChange={handleId} />
+            <InputField type="date" placeholder="" onChange={handleDate} />
             <select onChange={handleType}>
             <option value={TicketType.General}>General</option>
             <option value={TicketType.VIP}>VIP</option>
             <option value={TicketType.Premium}>Premium</option>
             </select>
-            <input type="number" placeholder="Price" onChange={handlePrice} />
+            <InputField type="number" placeholder="Price" onChange={handlePrice} />
             <label>
-            <input type="checkbox" onChange={handleSold} />
+            <InputField type="checkbox" placeholder="" onChange={handleSold} />
             Sold
             </label>
             </div>
             <div className="user-form__footer">
-               
-            <button type='button' className='create-btn' onClick={createTicket}>Create</button>
-            
-           
-            <button type='button' className="cancel-btn" onClick={() => closeModalWindow()}>Cancel</button>
+                <ActionButton className="create-btn" onClick={createTicket} buttonText='Create' />
+                <ActionButton className="cancel-btn" onClick={closeModalWindow} buttonText='Cancel' />
             
             </div>
             </form>

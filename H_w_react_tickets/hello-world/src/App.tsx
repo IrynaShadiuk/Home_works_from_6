@@ -2,7 +2,7 @@ import Header from "./components/header/Header";
 import Users from "./components/Users/Users";
 import Tickets from "./components/Tickets/Tickets";
 import './app.scss'
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Main from "./components/main/Main";
 
 function App() {

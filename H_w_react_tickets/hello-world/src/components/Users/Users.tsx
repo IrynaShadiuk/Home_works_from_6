@@ -1,28 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UsersList from "./users-list/UsersList";
 import UsersForm from "./users-form/UsersForm";
 import { IUser } from "../interfaced/users.dao"
-import './users.scss'
 
 const Users = () => {
+    
+    let response: IUser[] = [];
     const storage = localStorage.getItem('users');
-    const response = JSON.parse(storage ?? '{}');
-    const data = !!Object.keys(response).length ? response : [];
 
-    console.log(data); 
+    if(storage) {
+        response = JSON.parse(storage);
+    }
 
-    // const [users, setUsers] = useState<IUser[]>([{ id: '214314213+Ivan@mail.com', firstName: 'Ivan', lastName: 'Ivaniv', age: 23, email: 'Ivan@mail.com' }]);
-    const [users, setUsers] = useState<IUser[]>(data as IUser[]);
+    const [users, setUsers] = useState<IUser[]>(response);
     const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
-    console.log(users);
-
     const updateUsersList = (newUser: IUser) => {
-        const updatedUsers = [...users, newUser];
-        setUsers(updatedUsers);
-        console.log('users', users);
-        localStorage.setItem('users', JSON.stringify(updatedUsers));
+        setUsers([...users, newUser]);
     }
+
+    useEffect(() => {
+        localStorage.setItem('users', JSON.stringify(users));
+    }, [users]);
+
+  
 
     return (
         <div className="users">

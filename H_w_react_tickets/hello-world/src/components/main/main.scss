@@ -1,0 +1,46 @@
+.centered {
+    text-align: center;
+  }
+.bg-img-1 {
+    background-image: url('../../img/Soothing-nature-backgrounds-2.jpg.webp');
+    min-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media only screen and (max-device-width: 1600px) {
+    .bg-img-1 {
+      background-attachment: scroll;
+      min-height: 400px;
+    }
+  }
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  
+  
+    
+  
+  }
+  
+  .feedback {
+    margin-bottom: 20px;
+  }
+  
+  .address {
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+  }

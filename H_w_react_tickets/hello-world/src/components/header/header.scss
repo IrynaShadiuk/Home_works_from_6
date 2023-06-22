@@ -1,3 +1,9 @@
+$header-color: black;
+$header-background-color: white;
+
+$dark-header-color: white;
+$dark-header-background-color: #333333;
+
 .header {
     padding: 10px;
     display: flex;
@@ -13,7 +19,7 @@
             margin: 0 15px;
 
             a {
-                color: black;
+                color: $header-color;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: bold;
@@ -27,7 +33,34 @@
         }
     }
 }
+
 .header__title {
     font-size: 24px;
     font-weight: bold;
-  }
+}
+
+.light-theme {
+    background-color: $header-background-color;
+
+    .header__menu-link a {
+        color: $header-color;
+
+        &.active {
+            color: skyblue;
+        }
+    }
+}
+
+.dark-theme {
+    background-color: $dark-header-background-color;
+
+    .header__menu-link a {
+        color: $dark-header-color;
+
+        &.active {
+            color: skyblue;
+        }
+    }
+}
+
+

@@ -1,0 +1,30 @@
+.task-item {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+
+  
+  .task-item-edit-button {
+    color: black;
+    background-color: yellow;
+    width: 65%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .task-item-delete-button {
+    color: white;
+    background-color: red;
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

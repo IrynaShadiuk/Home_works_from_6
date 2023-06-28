@@ -1,4 +1,12 @@
 import React from 'react';
+import './taskItem.scss';
+import TaskCheck from './TaskCheck';
+import TaskDeleteButton from './TaskDeleteButton';
+import TaskEditButton from './TaskEditButton';
+import TaskName from './TaskName';
+import TaskStatus from './TaskStatus';
+import TaskId from './TaskId';
+
 
 interface TaskItemProps {
   task: {
@@ -25,44 +33,38 @@ const TaskItem: React.FC<TaskItemProps> = ({
   handleDelete,
   setNewTask
 }) => {
+  const getTaskStatusColor = () => {
+    return task.done ? 'done-task' : 'progress-task';
+  };
+
   return (
-    <tr key={task.id}>
-      <td>{task.id}</td>
-      <td>
-        {editTask === task.id ? (
-          <input
-            type="text"
-            value={newTask}
-            onChange={e => setNewTask(e.target.value)}
-          />
-        ) : (
-          task.task
-        )}
-      </td>
-      <td>
-        <input
-          type="checkbox"
-          checked={task.done}
-          onChange={() => handleCheck(task.id)}
-        />
-      </td>
-      <td>{task.done ? 'DONE' : 'PROGRESS'}</td>
-      <td>
-        {editTask === task.id ? (
-          <button onClick={() => handleSaveEdit(task.id)} style={{ color: 'yellow' }}>
-            Save
-          </button>
-        ) : (
-          <button onClick={() => handleEdit(task.id)} style={{ color: 'yellow' }}>
-            Edit
-          </button>
-        )}
-      </td>
-      <td>
-        <button onClick={() => handleDelete(task.id)} style={{ color: 'red' }}>
-          DELETE
-        </button>
-      </td>
+    <tr key={task.id} className="table-row">
+      <TaskId id={task.id} />
+      <TaskName
+        editTask={editTask}
+        newTask={newTask}
+        task={task}
+        setNewTask={setNewTask}
+      />
+      <TaskCheck
+        task={task}
+        handleCheck={handleCheck}
+      />
+      <TaskStatus
+        task={task}
+        getTaskStatusColor={getTaskStatusColor}
+      />
+      <TaskEditButton
+        editTask={editTask}
+        task={task}
+        newTask={newTask}
+        handleSaveEdit={handleSaveEdit}
+        handleEdit={handleEdit}
+      />
+      <TaskDeleteButton
+        task={task}
+        handleDelete={handleDelete}
+      />
     </tr>
   );
 };
